@@ -1,0 +1,18 @@
+# starts a new neo4j server in a docker container
+# The default credentials are neo4j:neo4j. The server
+# listens at localhost:7474.
+version: '3'
+services:
+   moneymonkey_db:
+      build:
+         # Use Dockerfile in same dir
+         context: .
+      # name of new image is this
+      image: moneymonkey_db
+      ports:
+      - 7474:7474
+      - 7687:7687
+      volumes:
+         # Map /data dir to data dir in same dir as this file
+         - ./data:/data
+      
