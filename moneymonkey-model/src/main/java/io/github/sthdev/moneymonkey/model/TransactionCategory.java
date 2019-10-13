@@ -1,26 +1,24 @@
 package io.github.sthdev.moneymonkey.model;
 
-import java.util.List;
-
-import javax.money.MonetaryAmount;
+import java.util.Set;
 
 import org.neo4j.ogm.annotation.NodeEntity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @NodeEntity
+@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public abstract class Account extends Entity {
+public class TransactionCategory extends Entity {
 
 	private String name;
 
-	private MonetaryAmount initialBalance;
-
-	private List<Transaction> transactions;
+	private Set<TransactionCategory> nestedCategories;
 }
