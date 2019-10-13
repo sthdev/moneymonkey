@@ -15,6 +15,7 @@
 	</parent>
 
 	<modules>
+		<module>moneymonkey-model</module>
 	</modules>
 
 	<properties>
