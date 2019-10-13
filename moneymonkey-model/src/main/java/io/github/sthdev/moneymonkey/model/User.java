@@ -1,5 +1,7 @@
 package io.github.sthdev.moneymonkey.model;
 
+import java.util.Set;
+
 import org.neo4j.ogm.annotation.NodeEntity;
 
 import lombok.AllArgsConstructor;
@@ -17,4 +19,6 @@ import lombok.NoArgsConstructor;
 public class User extends Entity {
 
 	private String username;
+
+	private Set<Account> ownedAccounts;
 }
