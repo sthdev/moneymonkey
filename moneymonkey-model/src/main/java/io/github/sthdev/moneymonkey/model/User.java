@@ -1,5 +1,6 @@
 package io.github.sthdev.moneymonkey.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -9,9 +10,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @NodeEntity
-@Builder
+@SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,5 +22,6 @@ public class User extends Entity {
 
 	private String username;
 
-	private Set<Account> ownedAccounts;
+	@Builder.Default
+	private Set<Account> ownedAccounts = new HashSet<>();
 }
