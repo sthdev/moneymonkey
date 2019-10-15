@@ -1,5 +1,9 @@
 package io.github.sthdev.moneymonkey;
 
+import java.time.LocalDateTime;
+
+import javax.money.Monetary;
+import org.javamoney.moneta.Money;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -31,7 +35,8 @@ public class Application {
 			User user1 = User.builder().username("Bibsi").build();
 
 			CurrentAccount account = CurrentAccount.builder().name("Spaßkasse Giro-Konto").iban("DE1234567890")
-					.bic("ABCDEF").build();
+					.bic("ABCDEF").created(LocalDateTime.now())
+					.initialBalance(Money.of(100000, Monetary.getCurrency("EUR"))).build();
 
 			user1.getOwnedAccounts().add(account);
 

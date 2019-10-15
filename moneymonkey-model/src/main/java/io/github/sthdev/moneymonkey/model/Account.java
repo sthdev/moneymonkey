@@ -1,11 +1,13 @@
 package io.github.sthdev.moneymonkey.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.money.MonetaryAmount;
-
+import org.javamoney.moneta.Money;
 import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.typeconversion.Convert;
 
+import io.github.sthdev.moneymonkey.converters.MoneyConverter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,7 +24,10 @@ public abstract class Account extends Entity {
 
 	private String name;
 
-	private MonetaryAmount initialBalance;
+	@Convert(value = MoneyConverter.class)
+	private Money initialBalance;
 
 	private List<Transaction> transactions;
+
+	private LocalDateTime created;
 }
