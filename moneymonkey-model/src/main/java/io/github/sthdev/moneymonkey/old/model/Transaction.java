@@ -1,4 +1,4 @@
-package io.github.sthdev.moneymonkey.model;
+package io.github.sthdev.moneymonkey.old.model;
 
 import java.time.LocalDateTime;
 import javax.money.MonetaryAmount;
@@ -6,6 +6,7 @@ import javax.money.MonetaryAmount;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
+import io.github.sthdev.moneymonkey.model.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

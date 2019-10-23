@@ -1,4 +1,4 @@
-package io.github.sthdev.moneymonkey.converters;
+package io.github.sthdev.moneymonkey.old.converters;
 
 import org.javamoney.moneta.Money;
 import org.neo4j.ogm.typeconversion.AttributeConverter;

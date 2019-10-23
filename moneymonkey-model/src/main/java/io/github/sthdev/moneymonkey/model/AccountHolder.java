@@ -1,7 +1,5 @@
 package io.github.sthdev.moneymonkey.model;
 
-import java.util.Set;
-
 import org.neo4j.ogm.annotation.NodeEntity;
 
 import lombok.AllArgsConstructor;
@@ -16,9 +14,9 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class TransactionCategory extends Entity {
+public class AccountHolder extends Entity {
 
-	private String name;
+	private String firstName;
 
-	private Set<TransactionCategory> nestedCategories;
+	private String lastName;
 }

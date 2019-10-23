@@ -1,22 +1,28 @@
-package io.github.sthdev.moneymonkey.model;
+package io.github.sthdev.moneymonkey.old.model;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import org.neo4j.ogm.annotation.NodeEntity;
 
+import io.github.sthdev.moneymonkey.model.Entity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @NodeEntity
-@Data
 @SuperBuilder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class CurrentAccount extends Account {
+public class User extends Entity {
 
-	private String iban;
+	private String username;
 
-	private String bic;
+	@Builder.Default
+	private Set<Account> ownedAccounts = new HashSet<>();
 }
