@@ -1,8 +1,0 @@
-type Query {
-	accountHolders: [AccountHolder]
-}
-
-type AccountHolder {
-	firstName: String
-	lastName: String!	
-}

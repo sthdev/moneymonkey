@@ -1,0 +1,20 @@
+type AccountHolder {
+	id : ID
+	firstName: String
+	lastName: String!	
+}
+
+input AccountHolderInput {
+	firstName: String
+	lastName: String!
+}
+
+type Query {
+	getAccountHolder (id : ID!) : AccountHolder
+	getAccountHolders: [AccountHolder]
+}
+
+type Mutation {
+	createAccountHolder (accountHolder: AccountHolderInput) : AccountHolder
+	deleteAccountHolder (id : ID!) : AccountHolder
+}
